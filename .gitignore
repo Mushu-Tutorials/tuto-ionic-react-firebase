@@ -1,6 +1,12 @@
 # IDE
 .vscode
 
+# Ionic
+/dist
+/android
+/ios
+
+# ------------------------------------------------------------------------------------------
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
