@@ -1,0 +1,7 @@
+{
+  "name": "tuto-ionic-react-firebase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
