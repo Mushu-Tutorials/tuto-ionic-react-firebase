@@ -25,11 +25,28 @@ cd tut-ionic-react-firebase
 
 # Adding Capacitor
 ionic integrations enable capacitor
-## Add platforms
+## Add platforms Android & Apple
 npm i @capacitor/app @capacitor/haptics @capacitor/keyboard @capacitor/status-bar
 ionic build
 ionic capacitor add android
-ionic capacitor add ios
+ionic capacitor add ios # If there is an error see below or https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error
+```
+
+### Errors
+
+Error with ios installation : [https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error](https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error)
+
+```shell
+[error] xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory
+        '/Library/Developer/CommandLineTools' is a command line tools instance
+```
+
+Run these commands:
+
+```shell
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+# Delete then re-install ios
+rm -rf ios && npx cap add ios
 ```
 
 ## Run
