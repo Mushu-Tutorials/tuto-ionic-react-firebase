@@ -34,8 +34,14 @@ ionic capacitor add ios # If there is an error see below or https://stackoverflo
 # Install capacitor google auth
 npm i --save @codetrix-studio/capacitor-google-auth
 npx cap update
-# Set the client ID Firebase Google Auth by searching these words: {your firebase google client id here}
+# Set the client ID Firebase Google Auth by searching these words: {your firebase google client id here} (https://youtu.be/pVfAAfwxFoI for tutorial)
 # Find the ID here: https://console.cloud.google.com
+cd android/app
+keytool -genkey -v -keystore main.keystore -alias tuto-ionic-react-firebase -keyalg RSA -keysize 2048 -validity 10000 # Generate keystore (password: test1234)
+keytool -keystore ./main.keystore -list -v
+# API Google: 84671872206-92g1h5oli8c5cqduu3thibid32jrf8qd.apps.googleusercontent.com
+nano android/app/build.gradle # Add configuration signingConfigs
+
 nano index.html
 sed -i 's/{your firebase google client id here}/ID_client_Web/g' index.html # Doesn't work yet, fix it whwn you can
 nano src/main.tsx

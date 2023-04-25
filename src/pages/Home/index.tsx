@@ -1,12 +1,13 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './styles.css';
-// import { GoogleAuth } from '@codetrix-studio/capacitor-google-auth'
+
+import { GoogleAuth } from '@codetrix-studio/capacitor-google-auth'
 
 const Home: React.FC = () => {
 
-  // async function signIn() {
-  //   console.log(GoogleAuth.signIn())
-  // }
+  async function signIn() {
+    console.log(GoogleAuth.signIn())
+  }
 
   return (
     <IonPage>
@@ -21,7 +22,7 @@ const Home: React.FC = () => {
             <IonTitle size="large">Hello World!!</IonTitle>
           </IonToolbar>
         </IonHeader>
-        {/* <button onClick={signIn}>Login with Google</button> */}
+        <button onClick={signIn}>Login with Google</button>
       </IonContent>
     </IonPage>
   );
